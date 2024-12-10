@@ -1,4 +1,4 @@
-module github.com/snivilised/astrolib
+module github.com/snivilised/balloons
 
 go 1.23.0
 

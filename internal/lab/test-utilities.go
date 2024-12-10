@@ -1,10 +1,8 @@
 package lab
 
 import (
-	"fmt"
-	"os"
+	"os/exec"
 	"path/filepath"
-	"runtime"
 	"strings"
 )
 
@@ -13,48 +11,24 @@ func Path(parent, relative string) string {
 	return filepath.Join(append([]string{parent}, segments...)...)
 }
 
-func Normalise(p string) string {
-	return strings.ReplaceAll(p, "/", string(filepath.Separator))
-}
-
-func Reason(name string) string {
-	return fmt.Sprintf("❌ for item named: '%v'", name)
-}
-
-func JoinCwd(segments ...string) string {
-	if current, err := os.Getwd(); err == nil {
-		parent, _ := filepath.Split(current)
-		grand := filepath.Dir(parent)
-		great := filepath.Dir(grand)
-		all := append([]string{great}, segments...)
-
-		return filepath.Join(all...)
-	}
-
-	panic("could not get root path")
-}
-
-func Root() string {
-	if current, err := os.Getwd(); err == nil {
-		return current
-	}
-
-	panic("could not get root path")
-}
-
+// Repo gets the path of the repo with relative joined on
 func Repo(relative string) string {
-	_, filename, _, _ := runtime.Caller(0) //nolint:dogsled // ignore
-	return Path(filepath.Dir(filename), relative)
+	cmd := exec.Command("git", "rev-parse", "--show-toplevel")
+	output, _ := cmd.Output()
+
+	repo := strings.TrimSpace(string(output))
+
+	return combine(repo, relative)
 }
 
-func Log() string {
-	if current, err := os.Getwd(); err == nil {
-		parent, _ := filepath.Split(current)
-		grand := filepath.Dir(parent)
-		great := filepath.Dir(grand)
-
-		return filepath.Join(great, "Test", "test.log")
+// combine creates a path from the parent combined with the relative path. The relative
+// path is a file system path so should only contain forward slashes, not the standard
+// file path separator as denoted by filepath.Separator, typically used when interacting
+// with the local file system. Do not use trailing "/".
+func combine(parent, relative string) string {
+	if relative == "" {
+		return parent
 	}
 
-	panic("could not get root path")
+	return parent + "/" + relative
 }
