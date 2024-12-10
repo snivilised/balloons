@@ -5,7 +5,7 @@ import (
 )
 
 type UsingConfigFileTemplData struct {
-	astrolibTemplData
+	balloonsTemplData
 	ConfigFileName string
 }
 

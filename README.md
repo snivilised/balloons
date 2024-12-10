@@ -1,12 +1,12 @@
-# 🌟 astrolib: ___Go template for library modules___
+# 🌟 balloons: ___Go template for library modules___
 
 [![A B](https://img.shields.io/badge/branching-commonflow-informational?style=flat)](https://commonflow.org)
 [![A B](https://img.shields.io/badge/merge-rebase-informational?style=flat)](https://git-scm.com/book/en/v2/Git-Branching-Rebasing)
 [![A B](https://img.shields.io/badge/branch%20history-linear-blue?style=flat)](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/managing-a-branch-protection-rule)
-[![Go Reference](https://pkg.go.dev/badge/github.com/snivilised/astrolib.svg)](https://pkg.go.dev/github.com/snivilised/astrolib)
-[![Go report](https://goreportcard.com/badge/github.com/snivilised/astrolib)](https://goreportcard.com/report/github.com/snivilised/astrolib)
-[![Coverage Status](https://coveralls.io/repos/github/snivilised/astrolib/badge.svg?branch=main)](https://coveralls.io/github/snivilised/astrolib?branch=main&kill_cache=1)
-[![Astrolib Continuous Integration](https://github.com/snivilised/astrolib/actions/workflows/ci-workflow.yml/badge.svg)](https://github.com/snivilised/astrolib/actions/workflows/ci-workflow.yml)
+[![Go Reference](https://pkg.go.dev/badge/github.com/snivilised/balloons.svg)](https://pkg.go.dev/github.com/snivilised/balloons)
+[![Go report](https://goreportcard.com/badge/github.com/snivilised/balloons)](https://goreportcard.com/report/github.com/snivilised/balloons)
+[![Coverage Status](https://coveralls.io/repos/github/snivilised/balloons/badge.svg?branch=main)](https://coveralls.io/github/snivilised/balloons?branch=main&kill_cache=1)
+[![Balloons Continuous Integration](https://github.com/snivilised/balloons/actions/workflows/ci-workflow.yml/badge.svg)](https://github.com/snivilised/balloons/actions/workflows/ci-workflow.yml)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![A B](https://img.shields.io/badge/commit-conventional-commits?style=flat)](https://www.conventionalcommits.org/)
 
@@ -53,7 +53,7 @@ By using this template, there is no need to use the cobra-cli to scaffold your a
 
 ### 📝 Checklist of required changes
 
-The following is list of actions that must be performed before using this template. Most of the changes concern changing the name `astrolib` to the name of the new application. As the template is instantiated from github, the new name will automatically replace the top level directory name, that being ___astrolib___.
+The following is list of actions that must be performed before using this template. Most of the changes concern changing the name `balloons` to the name of the new application. As the template is instantiated from github, the new name will automatically replace the top level directory name, that being ___astrolib___.
 
 ➕ The following descriptions use owner name ___pandora___ and repo name ___maestro___ as an example. That is to say the client has instantiated ___astrolib___ template into github at url _github.com/pandora/maestro_
 
@@ -63,13 +63,13 @@ Automated via `automate-checklist.sh` script. When the user instantiates the rep
 
 ##### ✅ Rename import statements
 
-+ `rename import paths`: global search and replace ___snivilised/astrolib___ to ___pandora/maestro___
++ `rename import paths`: global search and replace ___snivilised/balloons___ to ___pandora/maestro___
 
 ##### ✅ Identifiers
 
 + `change astrolibTemplData`: perform a refactor rename (_Rename Symbol_) to ___maestroTemplData___
 
-##### ✅ Global search replace astrolib to maestro
+##### ✅ Global search replace balloons to maestro
 
 Will take care of the following required changes:
 
@@ -84,7 +84,7 @@ Will take care of the following required changes:
 
 ##### ✅ Miscellaneous automated changes
 
-+ `reset version files`: this is optional because the release process automatically updates the version number according to the tag specified by the user, but will initially contain the version number which reflects the current value of astrolib at the time the client project is instantiated.
++ `reset version files`: this is optional because the release process automatically updates the version number according to the tag specified by the user, but will initially contain the version number which reflects the current value of balloons at the time the client project is instantiated.
 + `change SOURCE_ID`: to "github.com/pandora/maestro"
 
 #### 🖐 Manual changes
@@ -125,7 +125,7 @@ Of course, its up to the user what settings they use in their repo, these are ju
 
 ### 🌐 l10n Translations
 
-This template has been setup to support localisation. The default language is `en-GB` with support for `en-US`. There is a translation file for `en-US` defined as __src/i18n/deploy/astrolib.active.en-US.json__. This is the initial translation for `en-US` that should be deployed with the app.
+This template has been setup to support localisation. The default language is `en-GB` with support for `en-US`. There is a translation file for `en-US` defined as __src/i18n/deploy/balloons.active.en-US.json__. This is the initial translation for `en-US` that should be deployed with the app.
 
 Make sure that the go-i18n package has been installed so that it can be invoked as cli, see [go-i18n](https://github.com/nicksnyder/go-i18n) for installation instructions.
 
